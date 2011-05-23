@@ -3,6 +3,12 @@
 <head>
     <title>Note trainer</title>
     <style>canvas{position:absolute;left:0;top:0}</style>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon-precomposed" href="icon.png" !-- 114x114px -->
+    <link rel="shortcut icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
 <canvas id="canvas">
@@ -92,13 +98,33 @@
     */
     //drawNote(0,-5, "note.png");
     //drawNote(0,17, "note.png");
-    canvas.addEventListener('mousedown',function (e) {
-        _e = e;
-        if(e.clientY < noteheight) {
+    if ('ontouchstart' in document.documentElement) {
+        canvas.addEventListener('touchstart', handleEvent);
+    } else {
+        canvas.addEventListener('mousedown', handleEvent);
+    }
+    function handleEvent(e) {
+        var clientY, clientx;
+        if (e.touches) {
+                clientY = e.touches[0].clientY;
+                clientX = e.touches[0].clientX;
+        } else {
+            clientY = e.clientY;
+            clientX = e.clientX;
+        }
+        if((!clientY) || !(clientX)) {
+            alert("Arrgghh!");
+        }
+
+        if(clientY < noteheight) {
+            if(clientY < noteheight/4) {
+                genNotes();
+                draw();
+            }
             return;
         }
-        var pos = 0|(e.clientX/width*8) 
-        pos += 8*(0| 4*(e.clientY-noteheight)/(height-noteheight))
+        var pos = 0|(clientX/width*8) 
+        pos += 8*(0| 4*(clientY-noteheight)/(height-noteheight))
         var noteMap = [
             6, 7, 7, 9, 9,11,11,12,
             6, 6, 8, 8,10,10,12,12,
@@ -108,6 +134,9 @@
         var names = "cdefgab";
         console.log(names.charAt(noteMap[pos]>>1) + ((noteMap[pos]&1)? "#" : ""));
         var note = noteMap[pos]>>1;
+        if(clef === "f") {
+            note = (note + 5) % 7;
+        }
         var curnote = notes[noteid]
         if(note === (7+curnote)%7) {
             drawNote(noteid,curnote, "note-green.png");
@@ -129,7 +158,7 @@
             genNotes();
             setTimeout(draw, 100);
         }
-    });
+    };
 
 })();
 </script>
