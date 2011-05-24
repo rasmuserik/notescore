@@ -12,6 +12,7 @@
 </head>
 <body>
 <canvas id="canvas">
+<script src="phonegap.0.9.5.js"></script>
 <script>
 (function() {
     var canvas = document.getElementById("canvas");
@@ -85,8 +86,11 @@
         }
     }
 
-    genNotes();
-    draw();
+    document.addEventListener("deviceready", main);
+    function main() {
+        genNotes();
+        draw();
+    }
 
     /*
     for(var i = 0; i < 4; ++i) {
