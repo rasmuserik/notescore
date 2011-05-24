@@ -18,5 +18,5 @@
 
 <!-- feature name="http://api.phonegap.com/1.0/network" required="false"/ -->
 
-<preference name="autorotate" value="false" readonly="true"/>
+<preference name="autorotate" value="false" readonly="false"/>
 </widget>
