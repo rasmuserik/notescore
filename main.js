@@ -99,15 +99,19 @@
 
     function handleEvent(e) {
         var clientY, clientx;
-        if (e.touches) {
-                clientY = e.touches[0].clientY;
-                clientX = e.touches[0].clientX;
+        if (e.originalEvent.touches) {
+                clientY = e.originalEvent.touches[0].clientY;
+                clientX = e.originalEvent.touches[0].clientX;
         } else {
             clientY = e.clientY;
             clientX = e.clientX;
         }
         if((!clientY) || !(clientX)) {
-            alert("Arrgghh!");
+            str = "";
+            for(var x in e) {
+                str += ", " + x + ": " + e[x];
+            }
+            alert(e + " Arrgghh!" + str);
         }
 
         if(clientY < noteheight) {
