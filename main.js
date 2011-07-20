@@ -1,6 +1,4 @@
 (function() {
-    //var canvas = document.getElementById("canvas");
-    //var ctx = canvas.getContext("2d");
     var width, height;
     var startpos, notedwidth
     var notecount = 6;
@@ -10,17 +8,9 @@
     var clef = Math.random() > .5 ? "f" : "g";
 
     function clearImage() {
-        //ctx.fillRect(0,0,1000,1000);
         $('body').html('');
     }
     function drawImg(url, x, y, w, h) {
-        /*
-        var img = new Image();
-        img.onload = function() {
-            ctx.drawImage(img, x, y, w, h);
-        }
-        img.src = url;
-        */
         var img = $("<img>")
                 .attr('src', url)
                 .css('position', 'absolute')
@@ -55,8 +45,6 @@
         if(width > height) {
             width = 0|(height);
         }
-        //canvas.height = height;
-        //canvas.width = width;
         noteheight = 0 | (0.381966011 * height)
         startpos = width/4;
         notewidth = width/12;
@@ -111,7 +99,6 @@
             for(var x in e) {
                 str += ", " + x + ": " + e[x];
             }
-            alert(e + " Arrgghh!" + str);
         }
 
         if(clientY < noteheight) {
