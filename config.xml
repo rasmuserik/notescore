@@ -6,7 +6,7 @@
 
 <author href="http://rasmuserik.com/"> Rasmus Erik Voel Jensen</author>
 <icon src="icon.png" gap:role="default" />
-<preference name="orientation" value="portrait">
+<preference name="orientation" value="portrait" />
 <gap:splach src="splash.png" gap:role="default" />
 
 <gap:platforms>
