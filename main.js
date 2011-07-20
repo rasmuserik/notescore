@@ -74,7 +74,6 @@
         }
     }
 
-    document.addEventListener("deviceready", main);
     function main() {
         genNotes();
         draw();
@@ -144,5 +143,6 @@
             setTimeout(draw, 100);
         }
     };
-    main();
+    //main();
+    document.addEventListener("deviceready", main);
 })();
