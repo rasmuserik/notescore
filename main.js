@@ -143,6 +143,6 @@
             setTimeout(draw, 100);
         }
     };
-    //main();
-    document.addEventListener("deviceready", main);
+    $(main);
+    //document.addEventListener("deviceready", main);
 })();
