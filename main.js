@@ -42,8 +42,8 @@
         clearImage();
         width = window.innerWidth;
         height = window.innerHeight;
-        if(width > height) {
-            width = 0|(height);
+        if(width > height*.8) {
+            width = 0|(height*.8);
         }
         noteheight = 0 | (0.381966011 * height)
         startpos = width/4;
