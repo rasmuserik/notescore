@@ -1,3 +1,4 @@
+![logo](https://solsort.com/_logo.png)
 Mobile app for practising note/score reading.
 Freely available on [android market](https://market.android.com/details?id=dk.solsort.notescore).
 
