@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.rasmuserik.notetrainer" version="1.0.0">
-<name short="NoteTrainer">Note Training Tool</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="dk.solsort.notescore" version="1.0.0">
+<name>NoteScore</name>
+<shortdescription>Simple score reading practice</shortdescription>
+<description>
+  Note training / score reading practice. Practice reading notes with a virtual piano. Random notes are shown on bass and treble clefs, which are then to be played on a virtual piano. 
 
-<description></description>
+  Visual feedback instead of sounds when the keys are hit to allow usage on the run.
+
+  It is free, and if you like it, please share and recommend it to others. 
+
+  This is the first published version with lot of room for improvement. Please add bug reports and feature requests at 
+  https://github.com/rasmuserik/notescore/issues/.
+  Source code is available at http://github.com/rasmuserik/notescore/.
+</description>
 
 <author href="http://rasmuserik.com/"> Rasmus Erik Voel Jensen</author>
 <icon src="icon.png" gap:role="default" />
