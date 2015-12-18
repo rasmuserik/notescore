@@ -2,6 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="dk.solsort.notescore" version="1.0.0">
 <name>NoteScore</name>
 <shortdescription>Simple score reading practice</shortdescription>
+<date>2011-03</date>
 <description>
   Note training / score reading practice. Practice reading notes with a virtual piano. Random notes are shown on bass and treble clefs, which are then to be played on a virtual piano. 
 
